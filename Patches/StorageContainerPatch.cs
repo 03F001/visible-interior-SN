@@ -8,7 +8,7 @@ namespace VisibleLockerInterior {
             Controller.UpdateInterior(__instance);
     }
 
-    [HarmonyPatch(typeof(StorageContainer), nameof(StorageContainer.OnClose))]
+    [HarmonyPatch(typeof(StorageContainer), "OnClose")]
     internal class PatchCloseAction {
         [HarmonyPostfix]
         public static void Postfix(StorageContainer __instance) =>
